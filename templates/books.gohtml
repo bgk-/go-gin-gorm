@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Book</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</head>
+<body>
+{{range .}}
+<p><a href="/books/show?isbn={{.Isbn}}">{{.Isbn}}</a> - {{.Title}} - {{.Author}} - {{.Price}} - <a href="/books/update?isbn={{.Isbn}}">update</a> - <a href="/books/delete/process?isbn={{.Isbn}}">delete</a> </p>
+{{end}}
+
+<p class="link"><a href="/books/create">Insert A Book</a></p>
+</body>
+</html>
